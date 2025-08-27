@@ -10,3 +10,5 @@ ATK = 1
 DF = 1
 actions_atk = [0,0]
 actions_speed = [0,0]
+test = random()
+print(test)

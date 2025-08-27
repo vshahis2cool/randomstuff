@@ -12,3 +12,6 @@ actions_atk = [0,0]
 actions_speed = [0,0]
 test = random()
 print(test)
+
+#starting on the battle sytem, prob won't finish this for a while
+print()

@@ -31,6 +31,15 @@ enemyHP = enemyMaxHP
 if enemyMaxHP <= 10:
     enemyHPBar = 10
 else:
-    for 
+    enemyHpBar = 10
+    for enemyHPBar <= ((enemyMaxHP-10)/(enemyHPBar*0.1)):
+        enemyHpBar += 1
+    enemyHpBar -= 1
+enemyHPBardesplaycounter = 0
+enemyHPBardisplay = X
+for enemyHPBardesplaycounter < enemyHPBar:
+    enemyHPBardesplay = (enemyHPBardesplay,X)
+    enemyHPBardesplaycounter += 1
+
 
 print(enemydesplayname, <)

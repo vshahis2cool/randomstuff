@@ -8,10 +8,29 @@ HP = 10
 Speed = 5
 ATK = 1
 DF = 1
-actions_atk = [0,0]
-actions_speed = [0,0]
+moves_atk = {1,2}
+moves_speed = {1,2}
+moves_def = {1,2}
+allenemies_MaxHP = {5,10}
+allenemies_desplayname = {enemy1,enemy2}
+
+#temp, sets the current encounter to 1
+enemy = 1
+
+
+
+#test random
 test = random()
 print(test)
 
-#starting on the battle sytem, prob won't finish this for a while
-print()
+
+#array[0]
+enemydesplayname = allenemies_MaxHP[enemy]
+enemyMaxHP = allenemies_MaxHP[enemy]
+enemyHP = enemyMaxHP
+if enemyMaxHP <= 10:
+    enemyHPBar = 10
+else:
+    for 
+
+print(enemydesplayname, <)

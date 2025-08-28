@@ -41,5 +41,12 @@ for enemyHPBardesplaycounter < enemyHPBar:
     enemyHPBardesplay = (enemyHPBardesplay,X)
     enemyHPBardesplaycounter += 1
 
-
-print(enemydesplayname, <)
+#Hud
+def Refresh_hud():
+    print("1",enemydesplayname, "<",enemyHPBardesplay,">")
+    print("2")
+    print("3")
+    print("4")
+    print("5")
+    print("6")
+    print("7")

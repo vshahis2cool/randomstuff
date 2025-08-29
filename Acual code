@@ -9,15 +9,29 @@ name = input("Please imput your name, social security number, or mental state\n"
 print("Hello, ",name)
 print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
 print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")
+
+
+#Base Player setup
 HP = 10
 Speed = 5
 ATK = 1
 DF = 1
+
+
+
+
+#Data
+#moves data
 moves_atk = (1,2)
 moves_speed = (1,2)
 moves_def = (1,2)
+#enemies data
 allenemies_MaxHP = (5,10)
-allenemies_desplayname = ("enemy1","enemy2")
+allenemies_desplayname = ("testenemy1","testenemy2")
+
+
+
+
 
 #temp, sets the current encounter to random 1-2
 enemy = random.randint(0,1)
@@ -82,7 +96,7 @@ def Refresh_hud():
     
     #end of enemy HP bar refresh
     #desplay
-    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("2",enemydesplayname,"<",enemyHPBardesplay,">")
     print("3")
     print("4")
@@ -92,7 +106,41 @@ def Refresh_hud():
     print("8")
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("10",name,"<",HPBardesplay,">")
-
+    print("11")#insertmove1here
+    print("12")#insertmove2here
+    print("13")#insertmove3here
+    print("14")#insertmove4here
+    print()
+    examine = input("Insert # to examine\n")
+    valid_awnsers = ("2","3","4","5","6","7","8","10","11","12","13","14")
+    idiotloop = 0
+    while idiotloop == 0:
+        if examine in valid_awnsers:
+            idiotloop = 1
+        else:
+            examine = input("Invalid input, try again\n")
+    
+    print("---------------------------------------------")
+    if examine == "2":
+        print("Your enemy")
+        #might later add stuff here for closer examination if they have a certain item
+    if examine == "3" or examine == "4" or examine == "5" or examine == "6" or examine == "7" or examine == "8":
+        print("currently empty space, I might add ACCSI art here later")
+        print("probobly not though that would be a pain in the butt")
+    if examine == "10":
+        print("Its you!")
+        print("HP:",HP)
+        print("Max HP:",MaxHP)
+        if HP/MaxHP < 0.1:
+            print("might not be soon though")
+    if examine == "11" or examine == "12" or examine == "13" or examine == "14":
+        print("Action : ")
+        
+    
+    print()
+    print("--------------------------------------------")
+    input("press enter to continue\n")
+    Refresh_hud()
 
 
 

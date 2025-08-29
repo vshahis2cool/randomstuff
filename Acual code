@@ -18,15 +18,16 @@ Speed = 5
 ATK = 1
 DF = 1
 Deck = [1,2,3,4]
+Deck_names = ["testcard1","testcard2","testcard3","testcard4"]
 
 
 
 
 #Data
 #moves data
-moves_atk = (1,2)
-moves_speed = (1,2)
-moves_def = (1,2)
+cards_atk = (1,2)
+cards_speed = (1,2)
+cards_def = (1,2)
 #enemies data
 allenemies_MaxHP = (5,10)
 allenemies_desplayname = ("testenemy1","testenemy2")
@@ -111,17 +112,23 @@ def Refresh_hud():
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("10",name,"<",HPBardesplay,">")
     while count < len(Deck):
-        print("Ys")
-        count+=1
+        print(count+4,Deck_names[count])
+        count += 1
     print()
     examine = input("Insert # to examine\n")
-    valid_awnsers = ("2","3","4","5","6","7","8","10","11")
+    valid_awnsers = ["2","3","4","5","6","7","8","10"]
+    count = 11
+    while len(valid_awnsers) - 8 < len(Deck):
+        valid_awnsers.append(count)
+        count += 1
+    
     idiotloop = 0
     while idiotloop == 0:
         if examine in valid_awnsers:
             idiotloop = 1
         else:
-            examine = input("Invalid input, try again\n")
+            print("Invalid input, valid inputs include",valid_awnsers)
+            examine = input()
     
     print("---------------------------------------------")
     if examine == "2":

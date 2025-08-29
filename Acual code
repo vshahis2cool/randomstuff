@@ -17,17 +17,18 @@ HP = 10
 Speed = 5
 ATK = 1
 DF = 1
-Deck = [1,2,3,4]
-Deck_names = ["testcard1","testcard2","testcard3","testcard4"]
+Deck = [0,1,2,3]
 
 
 
 
 #Data
 #moves data
-cards_atk = (1,2)
-cards_speed = (1,2)
-cards_def = (1,2)
+cards_atk = (1,2,3,4)
+cards_speed = (1,2,3,4)
+cards_def = (1,2,3,4)
+cards_names = ("testcard1","testcard2","testcard3","testcard4")
+cards_description = ("testdescription1","testdescription2","testdescription3","testdescription4")
 #enemies data
 allenemies_MaxHP = (5,10)
 allenemies_desplayname = ("testenemy1","testenemy2")
@@ -38,6 +39,9 @@ allenemies_desplayname = ("testenemy1","testenemy2")
 
 #temp, sets the current encounter to random 1-2
 enemy = random.randint(0,1)
+
+def Play_card(card,target):
+    print("testplayed card",cards_names[card])
 
 
 
@@ -62,7 +66,7 @@ def Encoutner_setup():
         enemyHPBardesplay += "X"
         enemyHPBardesplaycounter += 1
 
-    global HPbar
+    global HPBar
     global HPBardesplay
     global MaxHP
     MaxHP = HP
@@ -96,10 +100,18 @@ def Refresh_hud():
     while enemyHPBardesplaycounter < enemyHPBarrefresh:
         enemyHPBardesplay += "X"
         enemyHPBardesplaycounter += 1
+    
+    HPBardesplay = "X"
+    HPBardesplaycounter = 0
+    HPBarrefresh = HPBar
+    HPBarrefresh *= MaxHP/HP
+    while HPBardesplaycounter < HPBarrefresh:
+        HPBardesplay += "X"
+        HPBardesplaycounter += 1
 
     count = 0
     
-    #end of enemy HP bar refresh
+    #end of HP bar refresh
     #desplay
     print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("2",enemydesplayname,"<",enemyHPBardesplay,">")
@@ -111,12 +123,17 @@ def Refresh_hud():
     print("8")
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("10",name,"<",HPBardesplay,">")
+    #11- (deck)
     while count < len(Deck):
-        print(count+4,Deck_names[count])
+        print(count+11,cards_names[Deck[count]])
         count += 1
+    #spacer
     print()
-    examine = input("Insert # to examine\n")
-    valid_awnsers = ["2","3","4","5","6","7","8","10"]
+    
+    
+    
+    examine = int(input("Insert # to examine\n"))
+    valid_awnsers = [2,3,4,5,6,7,8,10]
     count = 11
     while len(valid_awnsers) - 8 < len(Deck):
         valid_awnsers.append(count)
@@ -124,27 +141,38 @@ def Refresh_hud():
     
     idiotloop = 0
     while idiotloop == 0:
+        count = valid_awnsers.count(examine)
+        print(count)
+        print(examine)
         if examine in valid_awnsers:
             idiotloop = 1
         else:
             print("Invalid input, valid inputs include",valid_awnsers)
-            examine = input()
+            examine = int(input())
     
     print("---------------------------------------------")
-    if examine == "2":
-        print("Your enemy")
+    if examine == 2:
+        print("Your opponent")
         #might later add stuff here for closer examination if they have a certain item
-    if examine == "3" or examine == "4" or examine == "5" or examine == "6" or examine == "7" or examine == "8":
+    if examine > 2 and examine < 9:
         print("currently empty space, I might add ACCSI art here later")
         print("probobly not though that would be a pain in the butt")
-    if examine == "10":
+    if examine == 10:
         print("Its you!")
         print("HP:",HP)
         print("Max HP:",MaxHP)
         if HP/MaxHP < 0.1:
             print("might not be soon though")
-    if examine == "11" or examine == "12" or examine == "13" or examine == "14":
-        print("Action : ")
+    if examine > 10:
+        print("Action : "+cards_names[Deck[examine-10]])
+        print("Description : "+cards_description[Deck[examine-10]])
+        temp = int(input("Press enter to go back, input 0 to target self, 1 to target opponent\n"))
+        if temp == 0 or temp == 1:
+            Play_card(Deck[examine-10],temp)
+        
+        
+                
+
         
     
     print()

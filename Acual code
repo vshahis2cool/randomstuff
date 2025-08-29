@@ -35,10 +35,10 @@ def Encoutner_setup():
     if enemyMaxHP <= 10:
         enemyHPBar = 10
     else:
-        enemyHpBar = 10
+        enemyHPBar = 10
         while enemyHPBar <= ((enemyMaxHP-10)/(enemyHPBar*0.1)):
-            enemyHpBar += 1
-        enemyHpBar -= 1
+            enemyHPBar += 1
+        enemyHPBar -= 1
     enemyHPBardesplaycounter = 0
     enemyHPBardesplay = "X"
     while enemyHPBardesplaycounter < enemyHPBar:

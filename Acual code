@@ -5,7 +5,7 @@ import random
 
 
 print("Welcome to Otocat714's Crappy adventure game that will be the opposite of a corn maze")
-name = imput("Please imput your name, social security number, or mental state")
+name = input("Please imput your name, social security number, or mental state")
 print("Hello, ",name)
 print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
 print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")

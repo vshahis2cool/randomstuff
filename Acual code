@@ -115,7 +115,7 @@ def Refresh_hud():
         count+=1
     print()
     examine = input("Insert # to examine\n")
-    valid_awnsers = (2,3,4,5,6,7,8,10,11)
+    valid_awnsers = ("2","3","4","5","6","7","8","10","11")
     idiotloop = 0
     while idiotloop == 0:
         if examine in valid_awnsers:

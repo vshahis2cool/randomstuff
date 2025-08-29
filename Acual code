@@ -5,7 +5,7 @@ import random
 
 
 print("Welcome to Otocat714's Crappy adventure game that will be the opposite of a corn maze")
-name = input("Please imput your name, social security number, or mental state")
+name = input("Please imput your name, social security number, or mental state\n")
 print("Hello, ",name)
 print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
 print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")
@@ -13,41 +13,56 @@ HP = 10
 Speed = 5
 ATK = 1
 DF = 1
-moves_atk = {1,2}
-moves_speed = {1,2}
-moves_def = {1,2}
-allenemies_MaxHP = {5,10}
-allenemies_desplayname = {enemy1,enemy2}
+moves_atk = (1,2)
+moves_speed = (1,2)
+moves_def = (1,2)
+allenemies_MaxHP = (5,10)
+allenemies_desplayname = ("enemy1","enemy2")
 
-#temp, sets the current encounter to 1
-enemy = 1
-
-
-
-#test random
-test = random()
-print(test)
+#temp, sets the current encounter to random 1-2
+enemy = random.randint(0,1)
 
 
-#array[0]
-enemydesplayname = allenemies_MaxHP[enemy]
-enemyMaxHP = allenemies_MaxHP[enemy]
-enemyHP = enemyMaxHP
-if enemyMaxHP <= 10:
-    enemyHPBar = 10
-else:
-    enemyHpBar = 10
-    while enemyHPBar <= ((enemyMaxHP-10)/(enemyHPBar*0.1)):
-        enemyHpBar += 1
-    enemyHpBar -= 1
-enemyHPBardesplaycounter = 0
-enemyHPBardisplay = X
-while enemyHPBardesplaycounter < enemyHPBar:
-    enemyHPBardesplay = (enemyHPBardesplay,X)
-    enemyHPBardesplaycounter += 1
+
+def Encoutner_setup():
+    global enemyHPBar
+    global enemyMaxHP
+    global enemyHP
+    global enemydesplayname    
+    enemydesplayname = allenemies_desplayname[enemy]
+    enemyMaxHP = allenemies_MaxHP[enemy]
+    enemyHP = enemyMaxHP
+    if enemyMaxHP <= 10:
+        enemyHPBar = 10
+    else:
+        enemyHpBar = 10
+        while enemyHPBar <= ((enemyMaxHP-10)/(enemyHPBar*0.1)):
+            enemyHpBar += 1
+        enemyHpBar -= 1
+    enemyHPBardesplaycounter = 0
+    enemyHPBardesplay = "X"
+    while enemyHPBardesplaycounter < enemyHPBar:
+        enemyHPBardesplay += "X"
+        enemyHPBardesplaycounter += 1
+    
+
+
+
 
 #Hud
 def Refresh_hud():
+    #start of enemy HP bar refresh
+
+    enemyHPBardesplay = "X"
+    enemyHPBardesplaycounter = 0
+    enemyHPBarrefresh = enemyHPBar
+    enemyHPBarrefresh *= enemyMaxHP/enemyHP
+    while enemyHPBardesplaycounter < enemyHPBarrefresh:
+        enemyHPBardesplay += "X"
+        enemyHPBardesplaycounter += 1
+    
+    #end of enemy HP bar refresh
+    #desplay
     print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("2",enemydesplayname, "<",enemyHPBardesplay,">")
     print("3")
@@ -58,4 +73,9 @@ def Refresh_hud():
     print("8")
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 
+
+
+
+
+Encoutner_setup()
 Refresh_hud()

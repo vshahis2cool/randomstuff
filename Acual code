@@ -44,6 +44,25 @@ def Encoutner_setup():
     while enemyHPBardesplaycounter < enemyHPBar:
         enemyHPBardesplay += "X"
         enemyHPBardesplaycounter += 1
+
+    global HPbar
+    global HPBardesplay
+    global MaxHP
+    MaxHP = HP
+    if MaxHP <= 10:
+        HPBar = 10
+    else:
+        HPBar = 10
+        while HPBar <= ((MaxHP-10)/(HPBar*0.1)):
+            HPBar += 1
+        HPBar -= 1
+    HPBardesplaycounter = 0
+    HPBardesplay ="X"
+    while HPBardesplaycounter < HPBar:
+        HPBardesplay += "X"
+        HPBardesplaycounter += 1
+
+    
     
 
 
@@ -64,7 +83,7 @@ def Refresh_hud():
     #end of enemy HP bar refresh
     #desplay
     print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    print("2",enemydesplayname, "<",enemyHPBardesplay,">")
+    print("2",enemydesplayname,"<",enemyHPBardesplay,">")
     print("3")
     print("4")
     print("5")
@@ -72,6 +91,7 @@ def Refresh_hud():
     print("7")
     print("8")
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("10",name,"<",HPBardesplay,">")
 
 
 

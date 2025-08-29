@@ -9,6 +9,7 @@ name = input("Please imput your name, social security number, or mental state\n"
 print("Hello, ",name)
 print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
 print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")
+print("what I just said is totaly wrong and this is accualy a deck building game")
 
 
 #Base Player setup
@@ -16,6 +17,7 @@ HP = 10
 Speed = 5
 ATK = 1
 DF = 1
+Deck = [1,2,3,4]
 
 
 
@@ -93,6 +95,8 @@ def Refresh_hud():
     while enemyHPBardesplaycounter < enemyHPBarrefresh:
         enemyHPBardesplay += "X"
         enemyHPBardesplaycounter += 1
+
+    count = 0
     
     #end of enemy HP bar refresh
     #desplay
@@ -106,13 +110,12 @@ def Refresh_hud():
     print("8")
     print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("10",name,"<",HPBardesplay,">")
-    print("11")#insertmove1here
-    print("12")#insertmove2here
-    print("13")#insertmove3here
-    print("14")#insertmove4here
+    while count < len(Deck):
+        print("Ys")
+        count+=1
     print()
     examine = input("Insert # to examine\n")
-    valid_awnsers = ("2","3","4","5","6","7","8","10","11","12","13","14")
+    valid_awnsers = (2,3,4,5,6,7,8,10,11)
     idiotloop = 0
     while idiotloop == 0:
         if examine in valid_awnsers:

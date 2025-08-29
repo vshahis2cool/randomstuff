@@ -1,6 +1,11 @@
+import random
+
+
+
+
+
 print("Welcome to Otocat714's Crappy adventure game that will be the opposite of a corn maze")
-print("Please imput your name, social security number, or mental state")
-name = imput()
+name = imput("Please imput your name, social security number, or mental state")
 print("Hello, " name)
 print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
 print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")
@@ -43,10 +48,14 @@ for enemyHPBardesplaycounter < enemyHPBar:
 
 #Hud
 def Refresh_hud():
-    print("1",enemydesplayname, "<",enemyHPBardesplay,">")
-    print("2")
+    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("2",enemydesplayname, "<",enemyHPBardesplay,">")
     print("3")
     print("4")
     print("5")
     print("6")
     print("7")
+    print("8")
+    print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
+Refresh_hud()

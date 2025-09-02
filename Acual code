@@ -112,6 +112,9 @@ def Refresh_hud():
     while enemyHPBardesplaycounter < enemyHPBarrefresh:
         enemyHPBardesplay += "X"
         enemyHPBardesplaycounter += 1
+    while enemyHPBardesplaycounter < enemyHPBar:
+        enemyHPBardesplay += "O"
+        enemyHPBardesplaycounter += 1
     
     HPBardesplay = "X"
     HPBardesplaycounter = 0
@@ -143,13 +146,24 @@ def Refresh_hud():
     print()
     
     
-    
-    examine = int(input("Insert # to examine\n"))
     valid_awnsers = [2,3,4,5,6,7,8,10]
+    
     count = 11
     while len(valid_awnsers) - 8 < len(Deck):
         valid_awnsers.append(count)
         count += 1
+    
+    idiotloop = 0
+    while idiotloop == 0:
+        try:
+            examine = int(input("Insert # to examine\n"))
+        except:
+            print("Invalid input, valid inputs include",valid_awnsers)
+        else:
+            idiotloop = 1
+
+
+
     
     idiotloop = 0
     while idiotloop == 0:

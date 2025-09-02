@@ -202,16 +202,19 @@ def Refresh_hud():
     
     print()
     print("--------------------------------------------")
-    if enemyHP > 0:    
-        input("press enter to continue\n")
-        Refresh_hud()
-    else:
-        print("you win!")
+    input("press enter to continue\n")
 
 def Play_card(card,target):
     global enemyHP
-    enemyHP -= cards_atk[card]
+    if target == 1
+        enemyHP -= cards_atk[card]
+    if target == 0
+        HP -= cards_atk[card]
     print("you did ",cards_atk[card], "damage")
+    if enemyHP > enemyMaxHP:
+        enemyHP = enemyMaxHP
+    if HP > MaxHP:
+        HP = MaxHP
 
 
 
@@ -222,4 +225,7 @@ def Play_card(card,target):
 
 
 Encoutner_setup()
-Refresh_hud()
+if enemyHP > 0:
+    Refresh_hud()
+else:
+    print("you win")

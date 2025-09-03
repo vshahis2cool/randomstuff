@@ -165,7 +165,7 @@ def Refresh_hud():
     
     #end of HP bar refresh
     #desplay
-    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",enemyHP)
+    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("2",enemydesplayname,"<",enemyHPBardesplay,">")
     print("3")
     print("4")
@@ -275,7 +275,7 @@ def Play_card(card,target):
 
 
 
-def Refresh_Map(Location):
+def Refresh_Map():
     
     
 
@@ -286,8 +286,8 @@ def Refresh_Map(Location):
 
 
 
-    map1  = ["etstet","2"]
-    map2  = ["test"]
+    map1  = []
+    map2  = []
     map3  = []
     map4  = []
     map5  = []
@@ -316,28 +316,108 @@ def Refresh_Map(Location):
     map28 = []
     map29 = []
     map30 = []
-    maps = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
     
     
     
     
     #printing the map
-    temp = 0
-    temp2 = 1
-    while temp2 == 1:
-        for x in maps[temp]:
-            print(x,end="")
-            print()
-            temp += 1
-        if temp == 30:
-            temp2 = 1
-
-
-
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    for x in map1:
+        print(x,end="")
+    print()
+    for x in map2:
+        print(x,end="")
+    print()
+    for x in map3:
+        print(x,end="")
+    print()
+    for x in map4:
+        print(x,end="")
+    print()
+    for x in map5:
+        print(x,end="")
+    print()
+    for x in map6:
+        print(x,end="")
+    print()
+    for x in map7:
+        print(x,end="")
+    print()
+    for x in map8:
+        print(x,end="")
+    print()
+    for x in map9:
+        print(x,end="")
+    print()
+    for x in map10:
+        print(x,end="")
+    print()
+    for x in map11:
+        print(x,end="")
+    print()
+    for x in map12:
+        print(x,end="")
+    print()
+    for x in map13:
+        print(x,end="")
+    print()
+    for x in map14:
+        print(x,end="")
+    print()
+    for x in map15:
+        print(x,end="")
+    print()
+    for x in map16:
+        print(x,end="")
+    print()
+    for x in map17:
+        print(x,end="")
+    print()
+    for x in map18:
+        print(x,end="")
+    print()
+    for x in map19:
+        print(x,end="")
+    print()
+    for x in map20:
+        print(x,end="")
+    print()
+    for x in map21:
+        print(x,end="")
+    print()
+    for x in map22:
+        print(x,end="")
+    print()
+    for x in map23:
+        print(x,end="")
+    print()
+    for x in map24:
+        print(x,end="")
+    print()
+    for x in map25:
+        print(x,end="")
+    print()
+    for x in map26:
+        print(x,end="")
+    print()
+    for x in map27:
+        print(x,end="")
+    print()
+    for x in map28:
+        print(x,end="")
+    print()
+    for x in map29:
+        print(x,end="")
+    print()
+    for x in map30:
+        print(x,end="")
+    print()
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        
 
 
 Encoutner_setup()
-Refresh_Map(1)
+Refresh_Map()
 while enemyHP > 0 and HP > 0:
     Refresh_hud()
 else:

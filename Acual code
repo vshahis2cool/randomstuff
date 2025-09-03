@@ -275,7 +275,8 @@ def Play_card(card,target):
 
 
 
-
+def Refresh_Map(Location):
+    pass
 
 
 

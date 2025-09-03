@@ -4,7 +4,7 @@ import random
 
 
 
-
+print("")
 print("Welcome to Otocat714's Crappy adventure game that will be the opposite of a corn maze")
 name = input("Please imput your name, social security number, or mental state\n")
 print("Hello, ",name)
@@ -276,13 +276,68 @@ def Play_card(card,target):
 
 
 def Refresh_Map(Location):
-    pass
+    
+    
+
+
+
+
+
+
+
+
+    map1  = ["etstet","2"]
+    map2  = ["test"]
+    map3  = []
+    map4  = []
+    map5  = []
+    map6  = []
+    map7  = []
+    map8  = []
+    map9  = []
+    map10 = []
+    map11 = []
+    map12 = []
+    map13 = []
+    map14 = []
+    map15 = []
+    map16 = []
+    map17 = []
+    map18 = []
+    map19 = []
+    map20 = []
+    map21 = []
+    map22 = []
+    map23 = []
+    map24 = []
+    map25 = []
+    map26 = []
+    map27 = []
+    map28 = []
+    map29 = []
+    map30 = []
+    maps = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
+    
+    
+    
+    
+    #printing the map
+    temp = 0
+    temp2 = 1
+    while temp2 == 1:
+        for x in maps[temp]:
+            print(x,end="")
+            print()
+            temp += 1
+        if temp == 30:
+            temp2 = 1
 
 
 
 
 
 Encoutner_setup()
+Refresh_Map(1)
 while enemyHP > 0 and HP > 0:
     Refresh_hud()
 else:

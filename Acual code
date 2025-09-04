@@ -13,6 +13,9 @@ print("You are going to be playing a equivilent of offbrand pokemon but you don'
 print("what I just said is totaly wrong and this is accualy a deck building game")
 
 
+
+
+
 #Base Player setup
 HP = 10
 ATK = 1
@@ -35,6 +38,11 @@ cards_description = ("Deals 1 damage","deals 2 damage","deals -1 damage","deals 
 allenemies_MaxHP = (5,10)
 allenemies_desplayname = ("skeliton","zombie")
 allenemies_atk = (4,2)
+#map saves
+map_saves = []
+map_saves_location = ["0,0"]
+submap_saves = []
+submap_saves_location = []
 
 
 
@@ -275,16 +283,32 @@ def Play_card(card,target):
 
 
 
-def Refresh_Map():
+
+
+def Generate_Map():
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def Refresh_Map(map):
+    global map_saves
+    global map_saves_location
+    global submaps_saves
+    global submaps_saves_location
     
-    
-
-
-
-
-
-
-
 
     map1  = []
     map2  = []
@@ -316,6 +340,56 @@ def Refresh_Map():
     map28 = []
     map29 = []
     map30 = []
+
+
+
+
+
+
+    
+    
+    
+    map_saves = "T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/"
+    #decompiliation
+    if map.startswith("S_") == True:
+        map_loading = submap_saves[submap_saves_location.index(map)]
+    else:
+        map_loading = map_saves[map_saves_location.index(map)]
+    
+    
+    #26C6 (water)
+    #2667 (tree)
+    #26EC (plains)
+    #2652 (mountans)
+
+    temp = map_saves.split("/")
+    temp5 = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
+    for x in range(29):    
+        temp2 = temp[1]
+        temp3 = temp2.split("_")
+        for i in range(29):
+            #translates string into the accual desplay
+            if temp3[i] == "W":
+                temp4 = "\u26C6"
+            if temp3[i] == "T":
+                temp4 = "\u2667"
+            if temp3[i] == "P":
+                temp4 = "\u26EC"
+            if temp3[i] == "M":
+                temp4 = "\u2652"
+            #adds it to the map desplay
+            temp5[i] .append(temp4) 
+
+
+    
+    
+
+
+
+
+
+
+
     
     
     
@@ -417,7 +491,7 @@ def Refresh_Map():
 
 
 Encoutner_setup()
-Refresh_Map()
+Refresh_Map("0,0")
 while enemyHP > 0 and HP > 0:
     Refresh_hud()
 else:

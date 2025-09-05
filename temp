@@ -1,0 +1,497 @@
+import random
+
+
+
+
+
+print("")
+print("Welcome to Otocat714's Crappy adventure game that will be the opposite of a corn maze")
+name = input("Please imput your name, social security number, or mental state\n")
+print("Hello, ",name)
+print("Because im lazy and don't want to think of proper game design right now, the gameplay will be as follows")
+print("You are going to be playing a equivilent of offbrand pokemon but you don't have any pokemon")
+print("what I just said is totaly wrong and this is accualy a deck building game")
+
+
+
+
+
+#Base Player setup
+HP = 10
+ATK = 1
+DF = 1
+HP = 10
+Deck = [0,1,2,3]
+Hand_limit = 2
+Discard = []
+
+
+
+
+#Data
+#moves data
+cards_atk = (1,2,-1,-2)
+cards_def = (1,2,3,4)
+cards_names = ("ATK 1","ATK 2","HEAL 1","HEAL 2")
+cards_description = ("Deals 1 damage","deals 2 damage","deals -1 damage","deals -2 damage")
+#enemies data
+allenemies_MaxHP = (5,10)
+allenemies_desplayname = ("skeliton","zombie")
+allenemies_atk = (4,2)
+#map saves
+map_saves = []
+map_saves_location = ["0,0"]
+submap_saves = []
+submap_saves_location = []
+
+
+
+
+
+#temp, sets the current encounter to random 1-2
+enemy = random.randint(0,0)
+#temp, sets the current turn to player
+turn = 1
+
+
+
+
+def Encoutner_setup():
+    global enemyHPBar
+    global enemyMaxHP
+    global enemyHP
+    global enemydesplayname
+    global HPBar
+    global HPBardesplay
+    global MaxHP
+    global Hand
+    global Discard
+    global HP
+    global Handdelt
+    Handdelt = 0
+
+
+
+
+    enemydesplayname = allenemies_desplayname[enemy]
+    enemyMaxHP = allenemies_MaxHP[enemy]
+    enemyHP = enemyMaxHP
+    if enemyMaxHP <= 10:
+        enemyHPBar = 10
+    else:
+        enemyHPBar = 10
+        while enemyHPBar <= ((enemyMaxHP-10)/(enemyHPBar*0.1)):
+            enemyHPBar += 1
+        enemyHPBar -= 1
+    enemyHPBardesplaycounter = 0
+    enemyHPBardesplay = ""
+    while enemyHPBardesplaycounter < enemyHPBar:
+        enemyHPBardesplay += "X"
+        enemyHPBardesplaycounter += 1
+
+
+
+    MaxHP = HP
+    if MaxHP <= 10:
+        HPBar = 10
+    else:
+        HPBar = 10
+        while HPBar <= ((MaxHP-10)/(HPBar*0.1)):
+            HPBar += 1
+        HPBar -= 1
+    HPBardesplaycounter = 0
+    HPBardesplay =""
+    while HPBardesplaycounter < HPBar:
+        HPBardesplay += "X"
+        HPBardesplaycounter += 1
+
+    
+    
+
+
+
+
+#Hud
+def Refresh_hud():
+    #start of enemy HP bar refresh
+    global enemyHPBar
+    global enemyMaxHP
+    global enemyHP
+    global enemydesplayname
+    global HPBar
+    global HPBardesplay
+    global MaxHP
+    global Hand
+    global Discard
+    global HP
+    global turn
+    global Deck
+    global Handdelt
+
+
+    enemyHPBardesplay = ""
+    enemyHPBardesplaycounter = 0
+    enemyHPBarrefresh = enemyHPBar
+    enemyHPBarrefresh *= enemyHP/enemyMaxHP
+    while enemyHPBardesplaycounter < enemyHPBarrefresh:
+        enemyHPBardesplay += "X"
+        enemyHPBardesplaycounter += 1
+    while enemyHPBardesplaycounter < enemyHPBar:
+        enemyHPBardesplay += "O"
+        enemyHPBardesplaycounter += 1
+    
+    HPBardesplay = ""
+    HPBardesplaycounter = 0
+    HPBarrefresh = HPBar
+    HPBarrefresh *= HP/MaxHP
+    while HPBardesplaycounter < HPBarrefresh:
+        HPBardesplay += "X"
+        HPBardesplaycounter += 1
+    while HPBardesplaycounter < HPBar:
+        HPBardesplay += "O"
+        HPBardesplaycounter += 1
+
+    #Hand dealing
+    if Handdelt == 0:
+        Hand = []
+        temp3 = 0
+        while len(Hand) < Hand_limit and temp3 == 0:
+            if len(Deck) == 0:
+                if Discard == 0:
+                    temp3 = 1
+                else:    
+                    Deck = Discard
+                    Discard = []
+            else:
+                temp = random.randint(0,len(Deck)-1)
+                temp2 = Deck[temp]
+                Deck.pop(temp)
+                Hand.append(temp2)
+        Handdelt = 1
+
+    count = 0
+    
+    #end of HP bar refresh
+    #desplay
+    print("1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("2",enemydesplayname,"<",enemyHPBardesplay,">")
+    print("3")
+    print("4")
+    print("5")
+    print("6")
+    print("7")
+    print("8")
+    print("9>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("10",name,"<",HPBardesplay,">")
+    #11- (Hand)
+    while count < len(Hand):
+        print(count+11,cards_names[Hand[count]])
+        count += 1
+    print(len(Hand)+11,"Pass")
+    #spacer
+    print()
+    
+    if turn == 1:
+        valid_awnsers = [2,3,4,5,6,7,8,10,len(Hand)+11]
+
+        count = 11
+        while len(valid_awnsers) - 9 < len(Hand):
+            valid_awnsers.append(count)
+            count += 1
+    
+        idiotloop = 0
+        while idiotloop == 0:
+            try:
+                examine = int(input("Insert # to examine\n"))
+            except:
+                print("Invalid input, valid inputs include",valid_awnsers)
+            else:
+                idiotloop = 1
+
+
+
+    
+        idiotloop = 0
+        while idiotloop == 0:
+            count = valid_awnsers.count(examine)
+            if examine in valid_awnsers:
+                idiotloop = 1
+            else:
+                print("Invalid input, valid inputs include",valid_awnsers)
+                examine = int(input())
+        
+        print("---------------------------------------------")
+        if examine == 2:
+            print("Your opponent")
+            #might later add stuff here for closer examination if they have a certain item
+        if examine > 2 and examine < 9:
+            print("currently empty space, I might add ACCSI art here later")
+            print("probobly not though that would be a pain in the butt")
+        if examine == 10:
+            print("Its you!")
+            print("HP:",HP)
+            print("Max HP:",MaxHP)
+            if HP/MaxHP < 0.1:
+                print("might not be soon though")
+        if examine > 10 and examine < len(Hand)+11:
+            print("Action : "+cards_names[Hand[examine-11]])
+            print("Description : "+cards_description[Hand[examine-11]])
+            temp = input("Press enter to go back, input 0 to target self, 1 to target opponent\n")
+            if temp == "0" or temp == "1":
+                Play_card(Hand[examine-11],int(temp))
+        elif examine == len(Hand)+11:
+            print("End turn")
+            temp = input("Press enter to go back, input 1 to continue\n")
+            if temp == "1":
+                turn = 0
+                while len(Hand) > 0:
+                    Discard.append(Hand[0])
+                    Hand.pop(0)
+    else:
+        HP -= allenemies_atk[enemy]
+        print("You took",allenemies_atk[enemy],"damage")
+        turn = 1
+        Handdelt = 0
+        
+        
+                
+
+        
+    
+    print()
+    print("--------------------------------------------")
+    input("press enter to continue\n")
+
+def Play_card(card,target):
+    global enemyHP
+    global enemyMaxHP
+    global HP
+    global enemyHP
+    if target == 1:
+        enemyHP -= cards_atk[card]
+    if target == 0:
+        HP -= cards_atk[card]
+    print("you did ",cards_atk[card], "damage")
+    if enemyHP > enemyMaxHP:
+        enemyHP = enemyMaxHP
+    if HP > MaxHP:
+        HP = MaxHP
+
+    
+    Discard.append(card)
+    Hand.remove(card)
+
+
+
+
+
+def Generate_Map():
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def Refresh_Map(map):
+    global map_saves
+    global map_saves_location
+    global submaps_saves
+    global submaps_saves_location
+    
+
+    map1  = []
+    map2  = []
+    map3  = []
+    map4  = []
+    map5  = []
+    map6  = []
+    map7  = []
+    map8  = []
+    map9  = []
+    map10 = []
+    map11 = []
+    map12 = []
+    map13 = []
+    map14 = []
+    map15 = []
+    map16 = []
+    map17 = []
+    map18 = []
+    map19 = []
+    map20 = []
+    map21 = []
+    map22 = []
+    map23 = []
+    map24 = []
+    map25 = []
+    map26 = []
+    map27 = []
+    map28 = []
+    map29 = []
+    map30 = []
+
+
+
+
+
+
+    
+    
+    
+    map_saves = "W_W_W_W_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/"
+    #decompiliation
+    if map.startswith("S_") == True:
+        map_loading = submap_saves[submap_saves_location.index(map)]
+    else:
+        map_loading = map_saves[map_saves_location.index(map)]
+    
+    
+    #26C6 (water)
+    #2667 (tree)
+    #26EC (plains)
+    #2652 (mountans)
+
+    temp = map_saves.split("/")
+    print(temp)
+    #create a list of lists
+    temp5 = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
+    '''
+    for idx, segment in enumerate(temp):
+        temp3 = segment.split("_")
+        print(temp3)
+
+        for ch in temp3:
+            if ch == "W":
+                temp4 = "\u26C6"
+            elif ch == "T":
+                temp4 = "\u2667"
+            elif ch == "P":
+                temp4 = "\u26EC"
+            elif ch == "M":
+                temp4 = "\u2652"
+            else:
+                temp4 = ch  # fallback, or empty string
+
+            temp5[idx].append(temp4)
+    '''
+
+    
+    
+    
+    
+    #printing the map
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    for x in map1:
+        print(x,end="")
+    print()
+    for x in map2:
+        print(x,end="")
+    print()
+    for x in map3:
+        print(x,end="")
+    print()
+    for x in map4:
+        print(x,end="")
+    print()
+    for x in map5:
+        print(x,end="")
+    print()
+    for x in map6:
+        print(x,end="")
+    print()
+    for x in map7:
+        print(x,end="")
+    print()
+    for x in map8:
+        print(x,end="")
+    print()
+    for x in map9:
+        print(x,end="")
+    print()
+    for x in map10:
+        print(x,end="")
+    print()
+    for x in map11:
+        print(x,end="")
+    print()
+    for x in map12:
+        print(x,end="")
+    print()
+    for x in map13:
+        print(x,end="")
+    print()
+    for x in map14:
+        print(x,end="")
+    print()
+    for x in map15:
+        print(x,end="")
+    print()
+    for x in map16:
+        print(x,end="")
+    print()
+    for x in map17:
+        print(x,end="")
+    print()
+    for x in map18:
+        print(x,end="")
+    print()
+    for x in map19:
+        print(x,end="")
+    print()
+    for x in map20:
+        print(x,end="")
+    print()
+    for x in map21:
+        print(x,end="")
+    print()
+    for x in map22:
+        print(x,end="")
+    print()
+    for x in map23:
+        print(x,end="")
+    print()
+    for x in map24:
+        print(x,end="")
+    print()
+    for x in map25:
+        print(x,end="")
+    print()
+    for x in map26:
+        print(x,end="")
+    print()
+    for x in map27:
+        print(x,end="")
+    print()
+    for x in map28:
+        print(x,end="")
+    print()
+    for x in map29:
+        print(x,end="")
+    print()
+    for x in map30:
+        print(x,end="")
+    print()
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        
+
+
+Encoutner_setup()
+Refresh_Map("0,0")
+while enemyHP > 0 and HP > 0:
+    Refresh_hud()
+else:
+    if HP > 0:
+        print("you win")
+    else:
+        print("you lose")

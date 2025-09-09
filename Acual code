@@ -91,7 +91,7 @@ def Encoutner_setup():
     enemyHPBardesplaycounter = 0
     enemyHPBardesplay = ""
     while enemyHPBardesplaycounter < enemyHPBar:
-        enemyHPBardesplay += "X"
+        enemyHPBardesplay += "♥"
         enemyHPBardesplaycounter += 1
 
 
@@ -107,7 +107,7 @@ def Encoutner_setup():
     HPBardesplaycounter = 0
     HPBardesplay =""
     while HPBardesplaycounter < HPBar:
-        HPBardesplay += "X"
+        HPBardesplay += "♥"
         HPBardesplaycounter += 1
 
     

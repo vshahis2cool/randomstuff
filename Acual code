@@ -43,6 +43,10 @@ map_saves = []
 map_saves_location = ["0,0"]
 submap_saves = []
 submap_saves_location = []
+biome_list = (0,1,2,3)
+#temp for testing
+map_saves = ["2_2_2_3_2_2_0_2_0_3_3_2_2_0_3_1_1_0_1_0_3_0_1_1_3_3_3_0_0_2_/2_2_2_0_3_0_3_3_2_2_1_2_2_0_3_1_1_0_1_0_3_1_0_0_0_3_2_2_0_2_/2_2_2_2_0_2_3_3_3_2_2_1_0_1_2_1_2_0_2_0_0_3_1_2_3_3_0_0_1_0_/2_1_0_2_2_1_0_1_0_0_1_3_0_2_3_2_3_0_1_2_1_0_3_2_2_2_2_3_3_0_/2_3_3_0_0_0_3_2_0_0_1_3_0_0_0_3_2_1_3_2_0_2_3_2_1_1_3_2_3_3_/3_1_0_2_3_0_2_2_0_1_1_3_0_0_3_0_3_0_0_3_3_1_1_2_3_0_0_0_2_3_/3_3_2_2_3_1_2_1_1_0_1_1_2_3_0_3_3_1_3_3_3_0_0_3_1_2_3_1_3_2_/3_0_3_0_3_0_3_2_3_2_0_1_0_2_2_1_0_3_3_1_2_2_1_3_3_3_2_0_1_3_/3_2_0_3_2_2_2_0_0_2_3_2_1_2_1_0_2_3_3_0_2_1_0_2_1_2_2_0_2_1_/3_0_2_1_0_1_3_1_1_3_0_2_1_3_2_3_3_0_2_0_2_2_1_2_3_3_2_0_3_2_/2_1_2_2_0_1_1_2_2_1_1_3_3_2_2_0_1_2_3_1_3_0_3_0_0_3_3_3_2_3_/2_2_2_3_2_3_3_3_3_2_0_2_1_3_3_1_3_1_1_0_2_1_1_1_1_2_1_0_2_2_/2_0_0_3_0_1_2_2_0_1_1_1_0_1_1_1_2_2_3_2_0_1_2_3_3_3_2_1_0_1_/1_0_0_1_0_2_3_0_3_2_1_0_1_3_3_1_1_1_1_0_1_0_1_1_3_3_1_3_3_1_/1_0_3_3_0_1_3_0_3_3_1_2_0_3_1_0_1_3_2_2_2_1_1_2_2_1_3_0_0_3_/1_1_3_3_3_2_1_1_1_3_0_3_0_3_2_0_2_0_1_3_3_0_2_2_2_1_2_1_0_2_/1_3_2_0_2_3_3_1_3_0_2_1_0_2_2_1_3_2_2_3_3_3_2_0_2_1_2_0_3_1_/1_3_2_1_2_2_2_2_1_0_0_0_0_0_3_1_2_2_2_3_1_2_1_3_3_3_2_3_3_0_/0_3_0_1_2_2_1_2_0_3_2_0_0_0_2_2_1_2_3_3_1_0_3_3_1_2_0_1_1_1_/0_1_2_2_0_2_1_2_1_3_3_3_3_1_1_3_3_0_1_2_0_3_2_3_2_1_1_1_2_1_/1_3_1_0_0_2_3_1_3_1_0_1_2_1_2_1_1_0_3_3_2_2_2_1_3_2_1_0_3_0_/1_0_3_0_0_0_0_1_0_1_3_0_1_2_2_2_2_3_0_0_0_3_2_2_1_2_3_2_0_3_/3_2_2_2_0_3_3_2_2_3_2_1_3_3_0_0_2_0_0_3_2_2_0_1_3_3_2_2_2_0_/3_2_2_1_0_2_1_1_1_3_0_0_0_0_1_2_2_1_3_3_2_2_3_3_1_0_2_3_2_0_/3_3_3_3_0_3_1_3_0_0_2_0_3_0_1_2_2_1_2_0_3_2_2_0_3_2_1_1_2_2_/3_3_1_1_0_2_1_3_1_2_2_1_0_2_0_0_1_0_3_0_1_1_1_0_1_0_2_1_0_2_/3_1_0_0_3_1_1_3_2_0_3_1_2_3_0_3_2_2_2_1_0_3_3_1_3_1_2_2_0_3_/3_0_1_0_3_3_2_1_0_3_1_0_1_2_3_3_1_1_3_1_2_3_0_1_3_2_1_3_3_1_/3_0_1_0_2_0_3_0_1_1_0_3_0_3_1_1_1_3_1_1_2_0_0_2_2_1_1_3_3_2_/3_2_0_3_3_3_0_3_1_3_1_3_3_2_1_1_2_2_1_3_1_0_0_1_1_3_0_2_2_0_/"]
+
 
 
 
@@ -348,7 +352,6 @@ def Refresh_Map(map):
 
 
     
-    map_saves = ["W_W_W_W_M_M_M_M_M_P_P_P_P_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_T_/"]
     #decompiliation
     if map.startswith("S_") == True:
         map_loading = submap_saves[submap_saves_location.index(map)]
@@ -360,20 +363,29 @@ def Refresh_Map(map):
     temp = map_saves[0].split("/")
     temp5 = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
 
+    # number - icon
+    '''
+    0 - water
+    1 - Trees
+    2 - Plains
+    3 - Mountans
+    '''
+
+
+
+
     for x in range(30):
         temp2 = temp[x]
         temp3 = temp2.split("_")
-        print(x)
-        print(temp3)
         for i in range(30):
             #translates string into the accual desplay
-            if temp3[i] == "W":
+            if int(temp3[i]) == 0:
                 temp4 = "\u26C6"
-            if temp3[i] == "T":
+            if int(temp3[i]) == 1:
                 temp4 = "\u2667"
-            if temp3[i] == "P":
+            if int(temp3[i]) == 2:
                 temp4 = "\u2637"
-            if temp3[i] == "M":
+            if int(temp3[i]) == 3:
                 temp4 = "\u26F0"
             #adds it to the map desplay
             temp5[x].append(temp4)
@@ -495,20 +507,200 @@ def Refresh_Map(map):
 
 
 
-def Generate_Map():
+def Generate_Map(map_location):
     global map_saves
     global map_saves_location
     global submap_saves
     global submap_saves_location
-    
-    
-    
-    
-    
-    
-    default_biome = random.randint(1,4)
-    special_biome = random.randint(1,1)
+    global biome_list
 
+
+    map1  = []
+    map2  = []
+    map3  = []
+    map4  = []
+    map5  = []
+    map6  = []
+    map7  = []
+    map8  = []
+    map9  = []
+    map10 = []
+    map11 = []
+    map12 = []
+    map13 = []
+    map14 = []
+    map15 = []
+    map16 = []
+    map17 = []
+    map18 = []
+    map19 = []
+    map20 = []
+    map21 = []
+    map22 = []
+    map23 = []
+    map24 = []
+    map25 = []
+    map26 = []
+    map27 = []
+    map28 = []
+    map29 = []
+    map30 = []
+    maps_list = [map1,map2,map3,map4,map5,map6,map7,map8,map9,map10,map11,map12,map13,map14,map15,map16,map17,map18,map19,map20,map21,map22,map23,map24,map25,map26,map27,map28,map29,map30]
+
+    if map_location.startswith("S_") == False:
+        
+        
+        
+        
+        #detects if there are maps around it
+        temp1 = map_location.split(",")
+        tempx = int(temp1[0])
+        tempy = int(temp1[1])
+        tempxtest = tempx + 1
+        temptest = str(tempxtest)+","+str(tempy)
+        try:
+            map_r = map_saves_location.index(temptest)
+        except:
+            map_r = "N/A"
+        tempxtest = tempx - 1
+        temptest = str(tempxtest)+","+str(tempy)
+        try:
+            map_l = map_saves_location.index(temptest)
+        except:
+            map_l = "N/A"
+        tempytest = tempy + 1
+        temptest = str(tempx)+","+str(tempytest)
+        try:
+            map_u = map_saves_location(temptest)
+        except:
+            map_u = "N/A"
+        tempytest = tempy - 1
+        temptest = str(tempx)+","+str(tempytest)
+        try:
+            map_d = map_saves_location(temptest)
+        except:
+            map_d = "N/A"
+        
+        
+        #decompiles maps edges around it
+
+
+        if map_l == "N/A":
+            pass
+        else:
+            temp1 = map_saves[map_l].split("/")
+            map_l = []
+            for x in range(30):
+                temp2 = temp1[x].split("_")
+                map_l.append(temp2[29])
+        if map_r == "N/A":
+            pass
+        else:
+            temp1 = map_saves[map_r].split("/")
+            map_r = []
+            for x in range(30):
+                temp2 = temp1[x].split("_")
+                map_r.append(temp2[29])
+        if map_u == "N/A":
+            pass
+        else:
+            temp1 = map_saves[map_u].split("/")
+            map_u = []
+            for x in range(30):
+                temp2 = temp1[x].split("_")
+                map_u.append(temp2[29])
+        if map_d == "N/A":
+            pass
+        else:
+            temp1 = map_saves[map_d].split("/")
+            map_d = []
+            for x in range(30):
+                temp2 = temp1[x].split("_")
+                map_d.append(temp2[29])
+        
+        Generated_map = []
+        
+        map_assemble = ""
+        for x in range(30):
+            for i in range(30):
+                
+                
+                #detects sourounding areas
+                biome_chances = []
+                if x == 0:
+                    if map_u == "N/A" or len(map_u) < i+1:
+                        pass
+                    else:
+                        biome_chances.append(map_u[i])
+                if x == 29:
+                    if map_d == "N/A" or len(map_d) < i+1:
+                        pass
+                    else:
+                        biome_chances.append(map_d[i])
+                if i == 0:
+                    if map_l == "N/A" or len(map_l) < i+1:
+                        pass
+                    else:
+                        biome_chances.append(map_l[i])
+                if i == 29:
+                    if map_r == "N/A" or len(map_r) < i+1:
+                        pass
+                    else:
+                        biome_chances.append(map_r[i])
+                
+
+                #calculates chances for each biome depending on sourounding area
+                #75% chance to be one of the biomes around it
+                #25% chance to be a new biome
+                if len(biome_chances) == 0:
+                    biome = random.randint(0,len(biome_list)-1)
+                if len(biome_chances) >= 1:
+                    randombiome = random.randint(0,100)
+                    if randombiome <= 75:
+                        biome = biome_chances[random.randint(0,len(biome_chances)-1)]
+                else:
+                    biome = random.randint(0,len(biome_list)-1)
+                
+
+
+                #saves data in a list
+                if map_u == "N/A":
+                    map_u = []
+                if map_l == "N/A":
+                    map_u = []
+                maps_list[x].append(str(biome))
+                map_l.insert(i,str(biome))
+                try:
+                    map_l.pop(i+1)
+                except:
+                    pass
+                map_u.insert(i,str(biome))
+                try:
+                    map_u.pop(i+1)
+                except:
+                    pass
+                map_assemble += str(biome)+"_"
+            map_assemble += "/"
+
+
+                     
+                    
+
+
+
+
+
+
+
+    else:
+        pass
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -518,6 +710,7 @@ def Generate_Map():
 
 
 Encoutner_setup()
+Generate_Map("1,0")
 Refresh_Map("0,0")
 while enemyHP > 0 and HP > 0:
     Refresh_hud()

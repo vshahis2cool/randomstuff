@@ -24,6 +24,7 @@ HP = 10
 Deck = [0,1,2,3]
 Hand_limit = 2
 Discard = []
+Location = [15,15,"0,0"]
 
 
 
@@ -391,23 +392,7 @@ def Refresh_Map(map):
             temp5[x].append(temp4)
             temp5[x].append(" ")
             
-    #I did not in fact need to enumerate, I just needed for line 384 to refrance x instead of i, and same for line 369, I think the intire problem stemed from me hurriedly finishing this up and not dubble checking it before I had to go
-            
-            
-
-
-    
-    
-
-
-
-
-
-
-
-    
-    
-    
+    #I did not in fact need to enumerate, I just needed for line 384 to refrance x instead of i, and same for line 369, I think the intire problem stemed from me hurriedly finishing this up and not dubble checking it before I had to go    
     
     #printing the map
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
@@ -502,8 +487,19 @@ def Refresh_Map(map):
         print(x,end="")
     print()
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
-
+    valid_awnsers = ["W","A","S","D","w","a","s","d"]
+    idiotloop = 0
+    while idiotloop == 0:
+        try:
+            examine = input()
+            if examine in valid_awnsers:
+                pass
+            else:
+                raise
+        except:
+            print("Invalid input, valid inputs include",valid_awnsers)
+        else:
+            idiotloop = 1
 
 
 
@@ -656,10 +652,10 @@ def Generate_Map(map_location):
                     biome = random.randint(0,len(biome_list)-1)
                 if len(biome_chances) >= 1:
                     randombiome = random.randint(0,100)
-                    if randombiome <= 75:
+                    if randombiome <= 99:
                         biome = biome_chances[random.randint(0,len(biome_chances)-1)]
-                else:
-                    biome = random.randint(0,len(biome_list)-1)
+                    else:
+                        biome = random.randint(0,len(biome_list)-1)
                 
 
 
@@ -681,19 +677,11 @@ def Generate_Map(map_location):
                     pass
                 map_assemble += str(biome)+"_"
             map_assemble += "/"
-
-
-                     
-                    
-
-
-
-
-
-
-
+        map_saves.append(map_assemble)
+        map_saves_location.append(map_location)
     else:
-        pass
+        print("you havnt made submap generation yet dummy")
+
     
     
     

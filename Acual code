@@ -1,5 +1,5 @@
 import random
-
+import sys
 
 
 
@@ -111,7 +111,7 @@ def Encoutner_setup():
         HPBardesplaycounter += 1
     if HPBar<=0:
         print("You lost lol")
-        quit()
+        sys.exit()
 
     
     
